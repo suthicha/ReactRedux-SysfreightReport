@@ -1,0 +1,67 @@
+/* ============================================ */
+/* Metro UI Customs */
+html, body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+#cell-content {
+  overflow: auto;
+}
+#fromdate.input-control, #todate.input-control {
+  min-height: 1.7rem;
+  height: 1.7rem;
+  font-size:12.45px;
+}
+.button {
+  margin: 0;
+}
+/* .button.fixed {
+  height: 1.7em;
+  min-height: 1.7em;
+} */
+
+.page-content {
+  padding-top: 3.125rem;
+  height: 100%;
+}
+
+.table .input-control.checkbox {
+  line-height: 1;
+  min-height: 0;
+  height: auto;
+}
+.table {
+  font-size: 12px;
+}
+
+.metro .input-control .input-big {
+  height: 28px;
+  padding: 0 10px;
+  line-height: 28px;
+  }  
+
+@media screen and (max-width: 800px){
+  #cell-sidebar {
+      flex-basis: 52px;
+  }
+  #cell-content {
+      flex-basis: calc(100% - 52px);
+  }
+} 
+
+.login-form {
+  width: 25rem;
+  height: 18.75rem;
+  position: fixed;
+  top: 50%;
+  margin-top: -9.375rem;
+  left: 50%;
+  margin-left: -12.5rem;
+  background-color: #ffffff;
+  opacity: 0;
+  -webkit-transform: scale(.8);
+  transform: scale(.8);
+}
