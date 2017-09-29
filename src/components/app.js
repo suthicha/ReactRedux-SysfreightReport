@@ -23,9 +23,7 @@ export default class App extends Component {
         <Header isLogin={authenticated} />
         <div className="page-content">
           <div className="flex-grid no-responsive-future" style={styleHeight}>
-            <div className="row" style={styleHeight}>
-              <Sidebar isLogin={authenticated} />
-              
+            <div className="row" style={styleHeight}>  
               { this.props.children }
               
             </div>

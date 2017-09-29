@@ -26,11 +26,19 @@ class Header extends Component {
       <div style={displayNon} className="app-bar fixed-top darcula" data-role="appbar">
       <a className="app-bar-element branding">CTIBKK</a>
       <span className="app-bar-divider"></span>
-      
+      <ul className="app-bar-menu">
+          <li><a href="">Home</a></li>
+          <li>
+            <a href="" className="dropdown-toggle">Reports</a>
+            <ul className="d-menu" data-role="dropdown">
+                <li><Link to="/airline">Top 10 Airline</Link></li>
+                <li><a href="">Top 10 Airline Destination</a></li>
+            </ul>
+          </li>
+      </ul>
       <div className="app-bar-element place-right">
         <span className="dropdown-toggle">
-            <i className="fa fa-user-o fa-lg" />
-            {fullname}
+            <i className="fa fa-user-o fa-lg" style={{paddingRight: '10px'}} />{fullname}
         </span>
           <div className="app-bar-drop-container padding10 place-right no-margin-top block-shadow fg-dark" data-role="dropdown" data-no-close="true" style={widthStyle}>
               <h2 className="text-light">Quick settings</h2>

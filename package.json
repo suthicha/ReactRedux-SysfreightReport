@@ -5,7 +5,9 @@
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "postinstall": "webpack -p",
+    "start": "NODE_ENV=production node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -28,11 +30,14 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.1.18",
+    "chart.js": "^2.7.0",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
+    "react-chartjs-2": "^2.6.2",
     "react-dom": "^0.14.3",
     "react-redux": "4.3.0",
     "react-router": "^2.0.1",
+    "react-svg-piechart": "^1.4.0",
     "recharts": "^1.0.0-apha.5",
     "redux": "^3.0.4",
     "redux-form": "^4.2.2",

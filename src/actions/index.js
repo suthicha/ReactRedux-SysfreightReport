@@ -5,8 +5,9 @@ import {
   UNAUTH_LOGIN, 
   AUTH_REGISTER, 
   FETCH_AIRLINE_SHIPMENT,
+  FETCH_QUERY_AIRLINE_CHART,
   FETCH_AIRLINE_NAME } from './types';
-const ROOT_URL = `http://localhost:5000/api`;
+const ROOT_URL = `http://202.183.213.177/api`;
 
 export function getToken(){
   return localStorage.getItem('token') || '';
@@ -43,7 +44,7 @@ export function authLogin({ username, password }) {
             localStorage.setItem('authenticated', auth.authenticated)
             localStorage.setItem('username',username);
             localStorage.setItem('fullname', user.Fullname)
-            browserHistory.push('/dashboard')
+            browserHistory.push('/airline')
           }
         }
       })
@@ -157,11 +158,16 @@ export function fetchAirlineShipment({period}) {
                 })
             }
 
-            localStorage.setItem('airlineNames', JSON.stringify(airlineData));
-            localStorage.setItem('airlineShipments', JSON.stringify(data));
-            dispatch({type: FETCH_AIRLINE_SHIPMENT, payload: data})
+            // console.log(response.data);
+            
+            // localStorage.setItem('airlineNames', JSON.stringify(airlineData));
+            // localStorage.setItem('airlineShipments', JSON.stringify(data));
+            dispatch({type: FETCH_QUERY_AIRLINE_CHART, payload: data})            
+            dispatch({type: FETCH_AIRLINE_SHIPMENT, payload: response.data})
             dispatch({type: FETCH_AIRLINE_NAME, payload: airlineData})
+
         }catch(err){
+          dispatch({type: FETCH_QUERY_AIRLINE_CHART, payload: []})                      
           dispatch({type: FETCH_AIRLINE_SHIPMENT, payload: []})
           dispatch({type: FETCH_AIRLINE_NAME, payload: []})
         }
